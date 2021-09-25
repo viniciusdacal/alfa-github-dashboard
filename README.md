@@ -1,3 +1,9 @@
+### Feedback aula 01
+
+Gostaria muito de receber um feedback referente a aula, assim posso saber se estou no caminho certo e o que posso melhorar.
+Os feedbacks são anônimos!
+https://docs.google.com/forms/d/e/1FAIpQLSe-8x7MylakaJdKgYq4XWgEXeaJ-7YXKnEK35pejhUGsCsavQ/viewform?usp=sf_link
+
 # Atividade 1 - Criar um projeto do zero, com duas páginas
 
 Criar um novo projeto do zero utilizando CRA (Create React App).
