@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { useHistory } from "react-router";
+import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
 import "./login.css";
 
 // uncontrolled
 
 export default function PagesLogin() {
-  const history = useHistory();
   const [value, setValue] = useState(() =>
     window.localStorage.getItem("github_username")
   );
@@ -14,11 +13,12 @@ export default function PagesLogin() {
     event.preventDefault();
 
     window.localStorage.setItem("github_username", value);
-    history.push("/dashboard");
+    window.location.href = `http://localhost:4000/github-authentication?login=${value}`;
   }
 
   return (
     <div className="PagesLogin">
+      <DocumentTitle title="Acesse o sistema" />
       <form className="PagesLogin__form" onSubmit={onSubmit}>
         <div className="PagesLogin__form-control">
           <label htmlFor="username">Github username</label>

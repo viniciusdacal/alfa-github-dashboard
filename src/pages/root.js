@@ -7,11 +7,15 @@ import {
 
 import PagesLogin from "./login";
 import PagesDashboard from "./dashboard";
+import PagesAuth from "./auth";
 
 export default function PagesRoot() {
   return (
     <Router>
       <Switch>
+        <Route path="/auth">
+          <PagesAuth />
+        </Route>
         <Route path="/login">
           <PagesLogin />
         </Route>
