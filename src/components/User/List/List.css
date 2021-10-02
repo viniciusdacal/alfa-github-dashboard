@@ -1,0 +1,21 @@
+.UserList {
+  width: 400px;
+  /* padding-right: 0.5rem; */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background-color: #44475a;
+}
+
+.UserList > h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0 1rem;
+}
+
+.UserList__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem;
+}

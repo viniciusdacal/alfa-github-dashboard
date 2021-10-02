@@ -5,8 +5,8 @@ import "./login.css";
 // uncontrolled
 
 export default function PagesLogin() {
-  const [value, setValue] = useState(() =>
-    window.localStorage.getItem("github_username")
+  const [value, setValue] = useState(
+    () => window.localStorage.getItem("github_username") || ""
   );
 
   function onSubmit(event) {
@@ -26,7 +26,7 @@ export default function PagesLogin() {
             className="PagesLogin__form-input"
             id="username"
             name="username"
-            value={value}
+            value={value || ""}
             onChange={(ev) => setValue(ev.target.value)}
             type="text"
           />

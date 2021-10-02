@@ -1,0 +1,16 @@
+.PagesDashboard__topbar {
+  background-color: #6272a4;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.PagesDashboard__topbar__github {
+  margin-right: 0.5rem;
+}
+
+.PagesDashboard__content {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
