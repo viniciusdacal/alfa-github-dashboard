@@ -1,9 +1,12 @@
 import { BsBuilding, BsGeoAlt } from "react-icons/bs";
 import "./Card.css";
 
-export default function UserCard({ user, isSelected }) {
+export default function UserCard({ user, isSelected, onClick }) {
   return (
-    <li className={`UserCard ${isSelected && "UserCard--selected"}`}>
+    <li
+      onClick={onClick}
+      className={`UserCard ${isSelected && "UserCard--selected"}`}
+    >
       <div className="UserCard__main-info">
         <h3>{user.name}</h3> <span>{user.login}</span>
       </div>

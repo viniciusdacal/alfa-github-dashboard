@@ -1,0 +1,28 @@
+.RepositoryCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #282a36;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  padding: 1rem;
+}
+
+.RepositoryCard h3 {
+  margin-top: 0;
+  white-space: inherit;
+}
+
+.RepositoryCard__additional-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.RepositoryCard__additional-info > span {
+  display: flex;
+  align-items: center;
+}
+
+.RepositoryCard__additional-info > span svg {
+  margin-right: 0.3rem;
+}
