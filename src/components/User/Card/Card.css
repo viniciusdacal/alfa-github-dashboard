@@ -1,0 +1,42 @@
+.UserCard {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  padding: 1rem;
+  border: 1px solid #282a36;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 200ms;
+}
+
+.UserCard:hover,
+.UserCard--selected {
+  background-color: #282a36;
+}
+
+.UserCard__main-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.UserCard__main-info h3 {
+  margin: 0;
+  margin-right: 0.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.UserCard__headline {
+  margin-bottom: 0.5rem;
+}
+
+.UserCard__additional-info > span {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.UserCard__additional-info svg {
+  font-size: 0.8rem;
+  margin-right: 0.3rem;
+}

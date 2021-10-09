@@ -1,54 +1,22 @@
 import { useEffect, useState } from "react";
+import UserList from "../../components/User/List/List";
+import UserCard from "../../components/User/Card/Card";
+import FollowersQ from "./graphql/FollowersQ";
+import { useQuery } from "@apollo/client";
 import "./dashboard.css";
 
+// http://dontpad.com/alfa-aula-react-3
+
 export default function PagesDashboard() {
-  const [error, setError] = useState();
-  const [followers, setFollowers] = useState([]);
   const [username] = useState(
     () => window.localStorage.getItem("github_username") || ""
   );
 
-  useEffect(() => {
-    const token = window.localStorage.getItem("github_token");
-    fetch("https://api.github.com/graphql", {
-      method: "POST",
-      headers: {
-        authorization: `bearer ${token}`,
-      },
-      body: JSON.stringify({
-        query: `
-          query Followers {
-            user(login: "${username}") {
-              id
-              followers(first: 10) {
-                totalCount
-                pageInfo {
-                  hasNextPage
-                  endCursor
-                }
-                nodes {
-                  id
-                  name
-                  login
-                  bio
-                  company
-                  location
-                }
-              }
-            }
-          }
-        `,
-        variables: {},
-      }),
-    })
-      .then((r) => r.json())
-      .then((json) => {
-        setFollowers(json.data.user.followers.nodes);
-      })
-      .catch((error) => {
-        setError(error);
-      });
-  }, []);
+  const { data: followers, error } = useQuery(FollowersQ, {
+    variables: {
+      username,
+    },
+  });
 
   return (
     <div>
@@ -57,18 +25,11 @@ export default function PagesDashboard() {
         <div>Algo de errado</div>
       ) : (
         <section className="PagesDashboard__content">
-          Followers
-          <ul>
-            {followers.map((follower) => (
-              <li key={follower.id}>
-                <strong>{follower.name}</strong>
-                <strong>{follower.login}</strong>
-                <strong>{follower.bio}</strong>
-                <strong>{follower.company}</strong>
-                <strong>{follower.location}</strong>
-              </li>
+          <UserList title="Followers">
+            {followers?.user.followers.nodes.map((follower) => (
+              <UserCard key={follower.id} user={follower} />
             ))}
-          </ul>
+          </UserList>
         </section>
       )}
     </div>
