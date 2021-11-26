@@ -5,11 +5,29 @@
   border-radius: 5px;
   font-size: 0.9rem;
   padding: 1rem;
+
+  border: 1px solid #282a36;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 200ms;
 }
 
-.RepositoryCard h3 {
-  margin-top: 0;
-  white-space: inherit;
+.RepositoryCard:hover,
+.RepositoryCard--selected {
+  background-color: #282a36;
+}
+
+.RepositoryCard__main-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.RepositoryCard__main-info h3 {
+  margin: 0;
+  margin-right: 0.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 .RepositoryCard__additional-info {
