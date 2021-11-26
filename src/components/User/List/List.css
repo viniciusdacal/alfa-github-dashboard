@@ -13,6 +13,11 @@
   padding: 0 1rem;
 }
 
+.UserList > h3 span {
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+
 .UserList__content {
   display: flex;
   flex-direction: column;

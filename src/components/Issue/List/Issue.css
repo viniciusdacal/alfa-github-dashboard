@@ -1,0 +1,26 @@
+.IssueList {
+    width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: #44475a;
+  }
+  
+  .IssueList > h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0 1rem;
+  }
+  
+  .IssueList > h3 span {
+    font-size: 0.8rem;
+    margin-left: 1rem;
+  }
+  
+   .IssueList__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1rem;
+  }
+  
