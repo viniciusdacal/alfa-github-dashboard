@@ -2,7 +2,7 @@ import { GoIssueClosed, GoIssueOpened, GoLinkExternal } from "react-icons/go";
 import "./Card.css";
 
 export default function IssueCard({ issue }) {
-  console.log(issue);
+
   return (
     <div className="IssueCard">
       <h3>{issue?.title}</h3>
